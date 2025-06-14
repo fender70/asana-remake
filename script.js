@@ -40,7 +40,7 @@ function displayTasks() {
 
 function toggleComplete(taskId) {
     const task = tasks.find(task => task.id === taskId);
-    task.isComplete = !task.isComplete;
+    task.taskIsComplete = !task.taskIsComplete;
     displayTasks();
 }
 
