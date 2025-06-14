@@ -33,7 +33,7 @@ function displayTasks() {
             <button onclick="deleteTask('${task.id}')">Delete Task</button>
         `;
 
-        tasksDisplay.appendChild(taskCardd);
+        taskDisplay.appendChild(taskCardd);
     });
 }
 
