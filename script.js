@@ -10,8 +10,8 @@ function Task(title, description, author, contributors, dueDate, isComplete) {
     this.taskIsComplete = isComplete;
 }
 
-function addTask(title, description, author, contributors, dueDate) {
-    const newTask = new Task(title, description, author, contributors, dueDate);
+function addTask(title, description, author, contributors, dueDate, isComplete) {
+    const newTask = new Task(title, description, author, contributors, dueDate, isComplete);
     tasks.push(newTask);
 }
 
@@ -29,8 +29,8 @@ function displayTasks() {
             <p>Author: ${task.taskAuthor}</p>
             <p>Contributors ${task.taskContributors}</p>
             <p>Due date: ${task.taskDueDate}</p>
-            <p>Complete: ${task.isComplete ? 'No' : 'Yes'}</p>
-            <button onclick="toggleComplete('${task.id}')">Mark as Complete</button>
+            <p>Complete: ${task.taskIsComplete ? 'Yes' : 'No'}</p>
+            <button onclick="toggleComplete('${task.id}')"> ${task.taskIsComplete ? 'Mark as Incompleted' : 'Mark as Complete'}</button>
             <button onclick="deleteTask('${task.id}')">Delete Task</button>
         `;
 
@@ -60,7 +60,7 @@ document.getElementById('newTaskForm').addEventListener('submit', function(event
     const author = document.getElementById('author').value;
     const contributors = document.getElementById('contributors').value;
     const dueDate = document.getElementById('dueDate').value;
-    const isComplete = document.getElementById('isComplete').value;
+    const isComplete = document.getElementById('isComplete').checked;
 
     addTask(title, description, author, contributors, dueDate, isComplete);
     displayTasks();
