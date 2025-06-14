@@ -29,7 +29,7 @@ function displayTasks() {
             <p>Author: ${task.taskAuthor}</p>
             <p>Contributors ${task.taskContributors}</p>
             <p>Due date: ${task.taskDueDate}</p>
-            <p>Complete: ${task.isComplete ? 'Yes' : 'No'}</p>
+            <p>Complete: ${task.isComplete ? 'No' : 'Yes'}</p>
             <button onclick="toggleComplete('${task.id}')">Mark as Complete</button>
             <button onclick="deleteTask('${task.id}')">Delete Task</button>
         `;
